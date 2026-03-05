@@ -27,6 +27,10 @@ function App() {
     480: `${base}assets/achromatopsia-480`,
     1200: `${base}assets/achromatopsia-1200`,
   };
+  const alttext = {
+    480: `${base}assets/alttext-480`,
+    1200: `${base}assets/alttext-1200`,
+  };
 
   useEffect(() => {
     const onMessage = (event) => {
@@ -237,7 +241,7 @@ function App() {
               <div className='picture-wrapper'>
                 <img
                   src={mobileDataImg}
-                  alt='Actual user data from a Chronicle project'
+                  alt='Actual user data from a Chronicle project is shown in a bar chart. Mobile accounts for 58%. Desktop and tablet are both 21%.'
                 />
               </div>
             </LazyLoad>
@@ -365,6 +369,13 @@ function App() {
               </ul>
             </li>
           </ol>
+          <aside>
+            <p>
+              <b>Exercise:</b> Try to open DevTools in Chrome. Try to inspect an
+              element on the page. Open the equivalent of DevTools in other
+              browsers.
+            </p>
+          </aside>
           <h4>
             <span>Accessibility</span>
           </h4>
@@ -420,7 +431,7 @@ function App() {
                   sizes='(max-width: 1200px) 100vw, 1200px'
                   loading='lazy'
                   decoding='async'
-                  alt='A graphic about the Lassen Peak snowpack is shown without simulating a visual impairment related to color.'
+                  alt='A graphic about the Lassen Peak snowpack is shown without simulating a visual impairment related to color. Firefox’s developer tools menu is shown with the accessibility tab selected and “none” is highlighted for the Simulate option.'
                 />
               </picture>
             </LazyLoad>
@@ -448,7 +459,7 @@ function App() {
                   sizes='(max-width: 1200px) 100vw, 1200px'
                   loading='lazy'
                   decoding='async'
-                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of “blue blindness.”'
+                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of “blue blindness.” Firefox’s developer tools menu is shown with the accessibility tab selected and “tritanopia“ is selected in the Simulate option.'
                 />
               </picture>
             </LazyLoad>
@@ -477,7 +488,7 @@ function App() {
                   sizes='(max-width: 1200px) 100vw, 1200px'
                   loading='lazy'
                   decoding='async'
-                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of total color blindness.'
+                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of total color blindness. Firefox’s developer tools menu is shown with the accessibility tab selected and “achromatopsia” is selected in the Simulate option.'
                 />
               </picture>
             </LazyLoad>
@@ -493,6 +504,13 @@ function App() {
             Accessibility goes beyond color. It might involve scrolling, which
             is difficult for those with impaired motor functions.
           </p>
+          <aside>
+            <p>
+              <b>Exercise:</b> Open the accessibility tools in Firefox. Look at
+              graphics from your favorite news publication and check if it it’s
+              legible for those with a visual impairment.
+            </p>
+          </aside>
         </section>
         <section className='mb-xl'>
           <header>
@@ -523,7 +541,7 @@ function App() {
             </li>
             <li>
               <b>Notes</b> are a useful tool for calling out discrepancies or
-              issues in a chart.
+              issues in a chart or diagram.
             </li>
             <li>
               Providing a <b>source</b> is important for accountability and
@@ -536,7 +554,13 @@ function App() {
             <h3 className={`subhead mb-xs`}>Simple charts</h3>
           </header>
           <p>
-            Datawrapper and{' '}
+            <a
+              href='https://www.datawrapper.de/'
+              target='_blank'
+              rel='noopener noreferrer'>
+              Datawrapper
+            </a>{' '}
+            and{' '}
             <a
               href='https://flourish.studio/examples/?Industry=Featured'
               target='_blank'
@@ -593,6 +617,90 @@ function App() {
             </li>
             <li>Check that your annotations work on mobile and desktop.</li>
           </ol>
+        </section>
+        <section className='mb-xl'>
+          <header>
+            <h3 className={`subhead mb-xs`}>Diagrams and complex charts</h3>
+          </header>
+          <p>
+            DataWrapper and Flourish offer a lot of options that can lead to
+            very sophisticated visualizations. But they do not solve issues with
+            diagrams, and sometimes the best data visualization is very unique.
+            Here are a few strategies for problem solving:
+          </p>
+          <h4>
+            <span>1. Static images with HTML and CSS</span>
+          </h4>
+          <p>
+            This is the simplest approach, and I actually used it earlier in
+            this presentation.
+          </p>{' '}
+          <p>
+            This graphic shows which devices Chronicle readers used to view one
+            of our stories. It’s a raster image, but surrounding context and a
+            clear caption make it understandable, including for visually
+            impaired readers.
+          </p>
+          <figure className='picture mt-sm mb-lg'>
+            <LazyLoad offset={300}>
+              <div className='picture-wrapper'>
+                <img
+                  src={mobileDataImg}
+                  alt='Actual user data from a Chronicle project is shown in a bar chart. Mobile accounts for 58%. Desktop and tablet are both 21%.'
+                />
+              </div>
+            </LazyLoad>
+            <figcaption className='caption'>
+              This graphic appeared earlier in this presentation.
+            </figcaption>
+          </figure>
+          <p>
+            There’s more. Under the hood is <b>alt text</b>, which describes the
+            graphic visually. Screen readers will read this text aloud for the
+            visually impaired.
+          </p>
+          <figure className='big-picture mt-md mb-md'>
+            <LazyLoad offset={300}>
+              <picture>
+                <source
+                  type='image/webp'
+                  srcSet={`${alttext['480'] + '.webp'} 480w, ${alttext['1200'] + '.webp'} 1200w`}
+                  sizes='(max-width: 1200px) 100vw, 1200px'
+                />
+                <source
+                  type='image/jpeg'
+                  srcSet={`${alttext['480'] + '.jpg'} 480w, ${alttext['1200'] + '.jpg'} 1200w`}
+                  sizes='(max-width: 1200px) 100vw, 1200px'
+                />
+                <img
+                  src={alttext['1200'] + '.jpg'}
+                  srcSet={`${alttext['480'] + '.jpg'} 480w, ${alttext['1200'] + '.jpg'} 1200w`}
+                  sizes='(max-width: 1200px) 100vw, 1200px'
+                  loading='lazy'
+                  decoding='async'
+                  alt='Developer tools is used to inspect a rasterized chart about device usage by the audience for one Chronicle story.'
+                />
+              </picture>
+            </LazyLoad>
+            <figcaption className='caption'>
+              By inspecting the HTML in DevTools, we can see that an <b>alt</b>{' '}
+              was added to the <b>img</b> tag.
+            </figcaption>
+          </figure>
+          <h4>
+            <span>2. AI2HTML</span>
+          </h4>
+          <p>
+            AI2HTML is a script that converts Adobe Illustrator-based graphics
+            into HTML and responsive CSS. It was created by Archie Tse of the
+            New York Times.
+          </p>
+          <p>
+            Making AI2HTML graphics may not be as easy as using DataWrapper or
+            Flourish, but it gives you more control of the design and, for data,
+            opens up unusual visualizations that may not be possible on those
+            platforms.
+          </p>
         </section>
       </article>
       <footer className='mb-xl'>
