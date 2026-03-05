@@ -1,0 +1,35 @@
+.mb-xs {
+  margin-bottom: 0.5rem;
+}
+
+.mb-sm {
+  margin-bottom: 1rem;
+}
+
+.mb-md {
+  margin-bottom: 1.5rem;
+}
+
+.mb-lg {
+  margin-bottom: 2rem;
+}
+
+.mb-xl {
+  margin-bottom: 2.5rem;
+}
+
+.mb-xxl {
+  margin-bottom: 5rem;
+}
+
+.mt-sm {
+  margin-top: 1rem;
+}
+
+.mt-md {
+  margin-top: 1.5rem;
+}
+
+.mt-lg {
+  margin-top: 2rem;
+}
