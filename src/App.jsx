@@ -90,6 +90,10 @@ function App() {
         <header>
           <h3 className={`subhead mb-xs`}>Table of contents</h3>
         </header>
+        <p>
+          <i>This is a working document. I'll update this with more information shortly.
+          Please reach out if there’s something you’d like me to add.</i>
+        </p>
         <ul className='contents'>
           <li>
             <a href='#objectives'>Today’s objectives</a>
