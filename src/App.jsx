@@ -800,7 +800,10 @@ function App() {
             <h3 className={`subhead mb-xs`}>Anatomy of an infographic</h3>
           </header>
           <p>Here are the basic parts of an infographic.</p>
-          <div className='mt-md mb-lg' dangerouslySetInnerHTML={{ __html: ai2html }} />
+          <div
+            className='mt-md mb-lg'
+            dangerouslySetInnerHTML={{ __html: ai2html }}
+          />
           <ul>
             <li>
               <b>Headlines</b> are often the first thing readers will see on an
@@ -1129,6 +1132,19 @@ function App() {
             Flourish, but it gives you more control of the design and, for data,
             opens up unusual visualizations that may not be possible on those
             platforms.
+          </p>
+          <p>
+            What's striking about AI2HTML is how relevant it is still. It often
+            underpins very sophisticated visualizations, including a recent
+            <a
+              href='https://www.nytimes.com/interactive/2025/11/15/us/camp-mystic-flooding-deaths-video-map.html'
+              target='_blank'
+              rel='noopener noreferrer'>
+              {' '}
+              tick-tock of the tragic flooding at Camp Mystic in Texas by the
+              New York Times
+            </a>
+            .
           </p>
         </section>
       </article>
