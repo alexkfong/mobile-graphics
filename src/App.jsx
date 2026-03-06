@@ -109,6 +109,12 @@ function App() {
           <li>
             <a href='#simple_charts'>Simple charts</a>
           </li>
+          <li>
+            <a href='#complex'>Diagrams and complex charts</a>
+          </li>
+          <li>
+            <a href='#about'>About me</a>
+          </li>
         </ul>
       </nav>
       <article>
@@ -650,7 +656,7 @@ function App() {
             <li>Check that your annotations work on mobile and desktop.</li>
           </ol>
         </section>
-        <section className='mb-xl'>
+        <section id='complex' className='mb-xl'>
           <header>
             <h3 className={`subhead mb-xs`}>Diagrams and complex charts</h3>
           </header>
@@ -880,42 +886,41 @@ function App() {
           </p>
         </section>
       </article>
-      <footer className='mb-xl'>
+      <footer id='about' className='mb-xl'>
         <header>
           <h3 className={`subhead mb-xs`}>About me</h3>
-          <p>
-            I’m the creative director of the San Francisco Chronicle, where I
-            oversee design and help lead graphics and development. I am also
-            vice president of the Society for News Design, a trade organization
-            for journalists who specialize in visual storytelling and news
-            design.
-          </p>
-          <p>
-            I hate slide decks and had way more fun designing and coding this
-            from scratch to double as my presentation deck and a handout.
-          </p>
-          <h4>
-            <span>How to get in touch</span>
-          </h4>
-          <ul>
-            <li>
-              <a
-                href='https://github.com/alexkfong'
-                target='_blank'
-                rel='noopener noreferrer'>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a
-                href='https://www.linkedin.com/in/alex-k-fong-8100999b'
-                target='_blank'
-                rel='noopener noreferrer'>
-                LinkedIn
-              </a>
-            </li>
-          </ul>
         </header>
+        <p>
+          I’m the creative director of the San Francisco Chronicle, where I
+          oversee design and help lead graphics and development. I am also vice
+          president of the Society for News Design, a trade organization for
+          journalists who specialize in visual storytelling and news design.
+        </p>
+        <p>
+          I hate slide decks and had way more fun designing and coding this from
+          scratch to double as my presentation deck and a handout.
+        </p>
+        <h4>
+          <span>How to get in touch</span>
+        </h4>
+        <ul>
+          <li>
+            <a
+              href='https://github.com/alexkfong'
+              target='_blank'
+              rel='noopener noreferrer'>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href='https://www.linkedin.com/in/alex-k-fong-8100999b'
+              target='_blank'
+              rel='noopener noreferrer'>
+              LinkedIn
+            </a>
+          </li>
+        </ul>
       </footer>
     </>
   );
