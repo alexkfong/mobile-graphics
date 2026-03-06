@@ -411,12 +411,18 @@ function App() {
           </p>
           <p>
             Nearly 28.7% of adult Americans have some form of disability or
-            impairment.
+            impairment according to data from the{' '}
+            <a
+              href='https://www.cdc.gov/disability-and-health/articles-documents/disability-impacts-all-of-us-infographic.html'
+              target='_blank'
+              rel='noopener noreferrer'>
+              Centers for Disease Control
+            </a>{' '}
+            from 2024.
           </p>
           <p>
-            Designing with accessibility in mind means you’re taking into
-            account parts of your audience who may have conditions such as color
-            blindness.
+            Designing with accessibility in mind means taking into account parts
+            of your audience who may have conditions such as color blindness.
           </p>
           <p>Here are a few tips:</p>
           <ol>
@@ -892,7 +898,22 @@ function App() {
             <span>How to get in touch</span>
           </h4>
           <ul>
-            <li>GitHub</li>
+            <li>
+              <a
+                href='https://github.com/alexkfong'
+                target='_blank'
+                rel='noopener noreferrer'>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://www.linkedin.com/in/alex-k-fong-8100999b'
+                target='_blank'
+                rel='noopener noreferrer'>
+                LinkedIn
+              </a>
+            </li>
           </ul>
         </header>
       </footer>
