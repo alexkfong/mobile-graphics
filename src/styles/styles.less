@@ -21,7 +21,7 @@ header {
 .subhead {
   border-top: 6px solid black;
   padding-top: 0.5rem;
-  font-size: 1.125rem;
+  font-size: 1.3rem;
 }
 
 .byline-flex {
@@ -31,7 +31,7 @@ header {
 }
 
 .byline-attribution {
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding-top: 0.5rem;
   font-weight: 400;
   width: 50%;
@@ -90,10 +90,27 @@ nav > ul {
 
 .big-picture {
   max-width: 1200px;
+
+  @media (max-width: 767px) {
+    .responsive-desktop {
+      display: none;
+    }
+    .responsive-mobile {
+      display: block;
+    }
+  }
+  @media (min-width: 768px) {
+    .responsive-desktop {
+      display: block;
+    }
+    .responsive-mobile {
+      display: none;
+    }
+  }
 }
 
 .caption {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   font-style: italic;
   max-width: 512px;
   margin: 3px auto 0;
@@ -144,8 +161,13 @@ ol {
   }
 }
 
+li {
+  font-size: 1.2rem;
+}
+
 p,
 h4 {
+  font-size: 1.2rem;
   max-width: 512px;
   margin: 1rem auto;
 }
@@ -165,11 +187,32 @@ h4 {
 
 aside {
   max-width: 512px;
-  background-color: #eee;
+  background-color: #f3f3f3;
   margin: 0 auto;
   p {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     font-style: italic;
-    padding: 0.5rem 1rem;
+    padding: 1rem;
   }
+}
+
+pre code {
+  display: block;
+  max-width: 512px;
+  font-family: monospace;
+  font-size: 1rem;
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 0 auto;
+  /* Preserves whitespace and allows wrapping */
+  white-space: pre-wrap;
+  /* Breaks long words if they exceed the container width */
+  overflow-wrap: break-word;
+  /* Ensures a horizontal scrollbar if needed as a fallback, though wrapping should prevent it */
+  overflow-x: auto;
+  /* Optional: adds a border and padding for visual clarity */
+}
+
+.emojis {
+  font-size: 2.5rem;
 }

@@ -54,6 +54,7 @@ function App() {
   return (
     <>
       <header>
+        <p className='emojis'>📊📱</p>
         <h1 className={`mb-sm`}>
           <Balancer ratio={0.5}>Introduction to mobile graphics</Balancer>
         </h1>
@@ -101,6 +102,12 @@ function App() {
           </li>
           <li>
             <a href='#basic'>Basic digital skills</a>
+          </li>
+          <li>
+            <a href='#anatomy'>Anatomy of an infographic</a>
+          </li>
+          <li>
+            <a href='#simple_charts'>Simple charts</a>
           </li>
         </ul>
       </nav>
@@ -154,10 +161,23 @@ function App() {
             draw on reporting, writing, illustration, design and coding skills.
           </p>
           <p>
-            This session is meant to give you a taste of how to get beyond using
-            chart-making tools and provide you with resources for further
-            exploration as you level up.
+            This session for the American Collegiate Press is meant to give you
+            a taste of how to get beyond using chart-making tools and provide
+            you with resources for further exploration as you level up.
           </p>
+          <aside>
+            <p>
+              <b>Download the files:</b> I have put the exercises and examples
+              in this page onto a{' '}
+              <a
+                href='https://drive.google.com/drive/folders/1j1tr8bNK-4QV9WTRyOFrFOPgqXXmoDT2?usp=drive_link'
+                target='_blank'
+                rel='noreferrer noopener'>
+                Google drive
+              </a>{' '}
+              for you to download and try for yourself.
+            </p>
+          </aside>
         </section>
         <section id='snd' className='mb-xl'>
           <header>
@@ -376,6 +396,12 @@ function App() {
               browsers.
             </p>
           </aside>
+          <p>
+            One powerful tool in DevTools is the ability to preview your page on
+            a variety of simulated devices. DevTools will give you a good sense
+            of whether your design is working across devices, but best practice
+            is to test your mobile work on an actual smartphone.
+          </p>
           <h4>
             <span>Accessibility</span>
           </h4>
@@ -512,7 +538,7 @@ function App() {
             </p>
           </aside>
         </section>
-        <section className='mb-xl'>
+        <section id='anatomy' className='mb-xl'>
           <header>
             <h3 className={`subhead mb-xs`}>Anatomy of an infographic</h3>
           </header>
@@ -549,7 +575,7 @@ function App() {
             </li>
           </ul>
         </section>
-        <section className='mb-xl'>
+        <section id='simple_charts' className='mb-xl'>
           <header>
             <h3 className={`subhead mb-xs`}>Simple charts</h3>
           </header>
@@ -625,8 +651,43 @@ function App() {
           <p>
             DataWrapper and Flourish offer a lot of options that can lead to
             very sophisticated visualizations. But they do not solve issues with
-            diagrams, and sometimes the best data visualization is very unique.
-            Here are a few strategies for problem solving:
+            diagrams, and sometimes the best data visualizations are very
+            unique.
+          </p>
+          <p>
+            For example, when Andrew Park was building a{' '}
+            <a
+              href='https://www.sfchronicle.com/projects/2023/california-big-melt-water/'
+              target='_blank'
+              rel='noreferrer noopener'>
+              stream graph of Feather River flow (in acre-feet)
+            </a>
+            , we found that overlaying 2023 data on top of the historical
+            average with transparency made the chart clearer and improved
+            month-to-month comparisons.
+          </p>
+          <p>
+            We also saw that the steam graph resembled a river, which we felt
+            was appropriate to the content and the story we were trying to tell.
+          </p>
+          <figure className='picture mt-sm mb-lg'>
+            <LazyLoad offset={300}>
+              <div className='picture-wrapper'>
+                <img
+                  src={`${base}assets/featherriver.png`}
+                  alt='This screengrab compares monthly Feather River flow volumes (in acre-feet) for 2023 versus the average.'
+                />
+              </div>
+            </LazyLoad>
+            <figcaption className='caption'>
+              In the original presentation, we used code to switch between
+              vertical and horizontal versions of the graphic to ensure
+              readability across devices.
+            </figcaption>
+          </figure>
+          <p>
+            Here are a few strategies for getting beyond DataWrapper and
+            Flourish while ensuring your graphics work on mobile:
           </p>
           <h4>
             <span>1. Static images with HTML and CSS</span>
@@ -637,9 +698,10 @@ function App() {
           </p>{' '}
           <p>
             This graphic shows which devices Chronicle readers used to view one
-            of our stories. It’s a raster image, but surrounding context and a
-            clear caption make it understandable, including for visually
-            impaired readers.
+            of our stories. It’s a raster image, meaning it’s an image made of
+            pixels instead of scalable vector shapes or code. Surrounding
+            context and a clear caption make the image understandable, including
+            for visually impaired readers.
           </p>
           <figure className='picture mt-sm mb-lg'>
             <LazyLoad offset={300}>
@@ -687,6 +749,115 @@ function App() {
               was added to the <b>img</b> tag.
             </figcaption>
           </figure>
+          <p>
+            Notice that that alt caption is super hard to read on desktop, and
+            it gets even tinier on mobile? We can use CSS and media queries to
+            swap the images to solve this problem.
+          </p>
+          <p>
+            If you shrink the size of your browser, this image should swap to a
+            close up of where the alt text is more readable.
+          </p>
+          <figure className='big-picture'>
+            <img
+              className='responsive-desktop'
+              src={`${base}assets/wide.png`}
+              alt='A screengrab of an img tag in DevTools which is very wide and hard to read on a smaller screen'
+            />
+            <img
+              className='responsive-mobile'
+              src={`${base}assets/small.png`}
+              alt='A tighter screengrab of the img tag in DevTools which pixellates on desktop but is readable on mobile.'
+            />
+            <figcaption className='caption'>
+              The screengrab changes based on the size of your viewport via CSS.
+              This is a low lift, low coding solution that allows you to make
+              your graphics readable across devices.
+            </figcaption>
+          </figure>
+          <aside>
+            <p>
+              <b>Try it:</b> Resize your browser and see how the image changes.
+              If you inspect the image itself, you can watch how it changes in
+              the code in real time.
+            </p>
+          </aside>
+          <p>
+            This is a simplified version of what my code looks like for the two
+            photos. They are two stacked image tags, which I've wrapped in the
+            same <b>figure</b> tag since they're part of the same “graphic” and
+            should have the same caption (in the <b>figcaption</b> tag):
+          </p>
+          <pre>
+            <code>
+              &lt;figure class='big-picture'&gt;
+              <br /> &lt;img class='responsive-desktop'
+              <br />
+              {'  '}src='wide.png'
+              <br />
+              {'  '}alt='Alt text here' /&gt;
+              <br /> &lt;img class='responsive-mobile'
+              <br /> src='small.png'
+              <br />
+              {'  '}alt='Alt text here' /&gt;
+              <br /> &lt;figcaption className='caption'&gt;
+              <br /> Caption goes here
+              <br /> &lt;/figcaption&gt;
+              <br />
+              &lt;/figure&gt;
+            </code>
+          </pre>
+          <p>
+            By targeting something unique about the images, we can give them{' '}
+            <b>CSS rules</b>. In this case, we can use each image's class. In
+            the styles.css file, we can add a rule that hides one of the images
+            based on the viewport width.
+          </p>
+          <pre>
+            <code>
+              {`@media (max-width: 767px) {
+  .responsive-desktop {
+    display: none;
+  }
+  .responsive-mobile {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .responsive-desktop {
+    display: block;
+  }
+  .responsive-mobile {
+    display: none;
+  }
+}`}
+            </code>
+          </pre>
+          <p>
+            What happens in this code is the desktop version is hidden for all
+            viewports less than 767 pixels. Instead, mobile is shown.
+          </p>
+          <p>
+            Below that is a different rule for all viewports that are at minimum
+            greater than or equal to 768 pixels. In that case, the desktop
+            version is shown, and mobile is hidden.
+          </p>
+          <aside>
+            <p>
+              <b>Exercise:</b> Download all the files from this{' '}
+              <a
+                href='https://drive.google.com/drive/folders/1tySyAUXsWig_SSdkI7DRGYrCAfm6dulo?usp=drive_link'
+                target='_blank'
+                rel='noopener noreferrer'>
+                Google Drive folder
+              </a>
+              . Edit the file <b>styles.css</b> so that the smaller version is
+              visible for mobile sizes, and the larger version is visible on
+              larger viewports. The answer is in the <b>solution</b> folder.
+              Here's a hint: Target the classes <b>mobile</b> and{' '}
+              <b>text-width</b>.
+            </p>
+          </aside>
           <h4>
             <span>2. AI2HTML</span>
           </h4>
