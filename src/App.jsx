@@ -56,8 +56,8 @@ function App() {
   return (
     <>
       <header>
-        {/* <p className='emojis'>📊📱</p> */}
-        <img src={qr} alt='QR code link to this page' className='qrcode' />
+        <p className='emojis'>📊📱</p>
+        {/* <img src={qr} alt='QR code link to this page' className='qrcode' /> */}
         <h1 className={`mb-sm`}>
           <Balancer ratio={0.5}>Introduction to mobile graphics</Balancer>
         </h1>
@@ -979,6 +979,7 @@ function App() {
               LinkedIn
             </a>
           </li>
+          <li>alex.fong -at- sfchronicle.com</li>
         </ul>
       </footer>
     </>
