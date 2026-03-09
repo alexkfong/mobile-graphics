@@ -188,7 +188,7 @@ function App() {
                 href='https://drive.google.com/drive/folders/1j1tr8bNK-4QV9WTRyOFrFOPgqXXmoDT2?usp=drive_link'
                 target='_blank'
                 rel='noreferrer noopener'>
-                Google drive
+                Google Drive
               </a>{' '}
               for you to download and try for yourself.
             </p>
@@ -215,8 +215,8 @@ function App() {
           </p>
           <p>
             Students can join for $20 a year. Your school’s ACP-affiliated
-            journalism department can also join itself, which would make you a
-            member while you’re a student.
+            journalism department can also join as an organization, which would
+            make you a member while you’re a student.
           </p>
           <p>
             But if you have a financial challenge, please contact us. We want
@@ -256,9 +256,9 @@ function App() {
           </p>
           <p>
             In some sense the ontology of digital news is selection. Our
-            “audience” wants a piece of information and seeks it out as opposed
-            to in print, where news was curated and offered like an assortment
-            of unique chocolates in a box of candy.
+            “audience” wants a piece of information and seeks it, unlike in
+            print, where news was curated and offered like an assortment of
+            unique chocolates in a box of candy.
           </p>
           <p>
             Digital news design is therefore less about entry points and more
@@ -483,7 +483,7 @@ function App() {
               </picture>
             </LazyLoad>
             <figcaption className='caption'>
-              In Firefox, this is what a graphics looks like without the browser
+              In Firefox, this is what a graphic lookss like without the browser
               simulating a visual impairment related to color.
             </figcaption>
           </figure>
@@ -577,8 +577,8 @@ function App() {
           <aside>
             <p>
               <b>Exercise:</b> Open the accessibility tools in Firefox. Look at
-              graphics from your favorite news publication and check if it it’s
-              legible for those with a visual impairment.
+              graphics from your favorite news publication and check whether
+              it’s legible for those with a visual impairment.
             </p>
           </aside>
         </section>
@@ -688,13 +688,25 @@ function App() {
             </li>
             <li>Check that your annotations work on mobile and desktop.</li>
           </ol>
+          <aside>
+            <p>
+              <b>Exercise:</b> Download the data from the{' '}
+              <a
+                href='https://drive.google.com/drive/folders/1CEWKw158LFQm_Zg-2y05MARXJLca5u-Q?usp=drive_link'
+                target='_blank'
+                rel='noreferrer noopener'>
+                Google Drive folder
+              </a>{' '}
+              and create your own chart in Datawrapper or Flourish.
+            </p>
+          </aside>
         </section>
         <section id='complex' className='mb-xl'>
           <header>
             <h3 className={`subhead mb-xs`}>Diagrams and complex charts</h3>
           </header>
           <p>
-            DataWrapper and Flourish offer a lot of options that can lead to
+            Datawrapper and Flourish offer a lot of options that can lead to
             very sophisticated visualizations. But they do not solve issues with
             diagrams, and sometimes the best data visualizations are very
             unique.
@@ -743,6 +755,20 @@ function App() {
             separate, downloadable SVGs. We then imported these files into
             Illustrator to design the final visualization.
           </p>
+          <aside>
+            <p>
+              <b>Exercise:</b> Using the data from the last exercise (in the{' '}
+              <a
+                href='https://drive.google.com/drive/folders/1CEWKw158LFQm_Zg-2y05MARXJLca5u-Q?usp=drive_link'
+                target='_blank'
+                rel='noreferrer noopener'>
+                Google Drive folder
+              </a>
+              ) create your own chart by visualizing the data with RawGraphs and
+              then styling in Illustrator. Alternatively, use Illustrator’s
+              chart tool to make the visualization.
+            </p>
+          </aside>
           <p>
             Here are a few strategies for getting beyond DataWrapper and
             Flourish while ensuring your graphics work on mobile:
@@ -808,13 +834,13 @@ function App() {
             </figcaption>
           </figure>
           <p>
-            Notice that that alt caption is super hard to read on desktop, and
-            it gets even tinier on mobile? We can use CSS and media queries to
-            swap the images to solve this problem.
+            Notice that the alt caption is super hard to read on desktop, and it
+            gets even tinier on mobile? We can use CSS and media queries to swap
+            the images to solve this problem.
           </p>
           <p>
             If you shrink the size of your browser, this image should swap to a
-            close up of where the alt text is more readable.
+            close-up of where the alt text is more readable.
           </p>
           <figure className='big-picture'>
             <img
@@ -922,13 +948,19 @@ function App() {
           <p>
             AI2HTML is a script that converts Adobe Illustrator-based graphics
             into HTML and responsive CSS. It was created by Archie Tse of the
-            New York Times.
+            New York Times and was coming into vogue during the early part of my
+            career.
           </p>
           <p>
             Making AI2HTML graphics may not be as easy as using DataWrapper or
             Flourish, but it gives you more control of the design and, for data,
             opens up unusual visualizations that may not be possible on those
             platforms.
+          </p>
+          <p>
+            AI2HTML is also great for maps based on rasterized images. For
+            example, it’s often used to create a map using satellite imagery
+            from Google Earth.
           </p>
           <p>
             What's striking about AI2HTML is how relevant it is still. It often
