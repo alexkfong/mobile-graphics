@@ -9,6 +9,8 @@ import mobileDataImg from './assets/mobiledata.png';
 import sndLogo from './assets/sndlogo.png';
 import chronicleLogo from './assets/chronicle_logo.png';
 import Ai2html from './components/ai2html';
+import TOC from './chapters/toc';
+import Objectives from './chapters/objectives';
 
 function App() {
   const base = import.meta.env.BASE_URL;
@@ -89,111 +91,9 @@ function App() {
           </h4>
         </div>
       </header>
-      <nav>
-        <header>
-          <h3 className={`subhead mb-xs`}>Table of contents</h3>
-        </header>
-        <p>
-          <i>
-            This is a working document. I'll update this with more information
-            shortly. Please reach out if there’s something you’d like me to add.
-          </i>
-        </p>
-        <ul className='contents'>
-          <li>
-            <a href='#objectives'>Today’s objectives</a>
-          </li>
-          <li>
-            <a href='#snd'>Society for News Design</a>
-          </li>
-          <li>
-            <a href='#thinking_digital'>Thinking in digital</a>
-          </li>
-          <li>
-            <a href='#basic'>Basic digital skills</a>
-          </li>
-          <li>
-            <a href='#anatomy'>Anatomy of an infographic</a>
-          </li>
-          <li>
-            <a href='#simple_charts'>Simple charts</a>
-          </li>
-          <li>
-            <a href='#complex'>Diagrams and complex charts</a>
-          </li>
-          <li>
-            <a href='#about'>About me</a>
-          </li>
-        </ul>
-      </nav>
+      <TOC />
       <article>
-        <section id='objectives' className='mb-xl'>
-          <header>
-            <h3 className={`subhead mb-xs`}>Today’s objectives</h3>
-          </header>
-          <p>
-            We’re really in a renaissance for making graphics. Take a look at
-            the work of the{' '}
-            <a
-              href='https://www.nytimes.com/'
-              target='_blank'
-              rel='noreferrer noopener'>
-              New York Times
-            </a>
-            ,{' '}
-            <a
-              href='https://www.reuters.com/graphics/'
-              target='_blank'
-              rel='noreferrer noopener'>
-              Reuters
-            </a>
-            , and the{' '}
-            <a
-              href='https://www.straitstimes.com/multimedia/graphics/2025/12/visual-stories-and-digital-graphics-2025/index.html'
-              target='_blank'
-              rel='noreferrer noopener'>
-              Straits Times
-            </a>{' '}
-            or of smaller but just as mighty teams at the{' '}
-            <a
-              href='https://pudding.cool/'
-              target='_blank'
-              rel='noreferrer noopener'>
-              Pudding
-            </a>{' '}
-            and the{' '}
-            <a
-              href='https://kontinentalist.com/'
-              target='_blank'
-              rel='noreferrer noopener'>
-              Kontinentalist
-            </a>
-            .
-          </p>
-          <p>
-            These titans create work defined by informational rigor, captivating
-            image making and, when needed, thoughtful use of interactivity. They
-            draw on reporting, writing, illustration, design and coding skills.
-          </p>
-          <p>
-            This session for the American Collegiate Press is meant to give you
-            a taste of how to get beyond using chart-making tools and provide
-            you with resources for further exploration as you level up.
-          </p>
-          <aside>
-            <p>
-              <b>Download the files:</b> I have put the exercises and examples
-              in this page onto a{' '}
-              <a
-                href='https://drive.google.com/drive/folders/1j1tr8bNK-4QV9WTRyOFrFOPgqXXmoDT2?usp=drive_link'
-                target='_blank'
-                rel='noreferrer noopener'>
-                Google Drive
-              </a>{' '}
-              for you to download and try for yourself.
-            </p>
-          </aside>
-        </section>
+        <Objectives />
         <section id='snd' className='mb-xl'>
           <header>
             <h3 className={`subhead mb-xs`}>The Society for News Design</h3>
@@ -297,7 +197,7 @@ function App() {
               scale-based effects less effective.
             </li>
             <li>
-              <b>WiFi isn't a certainty.</b> Some readers may be coming in via
+              <b>WiFi isn’t a certainty.</b> Some readers may be coming in via
               slower cellular connections.
             </li>
             <li>
@@ -317,7 +217,7 @@ function App() {
             </li>
             <li>
               While most mobile devices have a lot of computing power,{' '}
-              <b>it's easier to crash web browsers on smartphones</b> in my
+              <b>it’s easier to crash web browsers on smartphones</b> in my
               experience.
             </li>
           </ol>
@@ -328,7 +228,7 @@ function App() {
             focuses on the most vital pieces of information to communicate.
           </p>
           <p>
-            Don't force your audience to click something if interaction doesn't
+            Don’t force your audience to click something if interaction doesn’t
             add any value.
           </p>
         </section>
@@ -375,7 +275,7 @@ function App() {
               Tools" and then selecting "Developer Tools."
             </figcaption>
           </figure>
-          <p>Here's how to use it in Chrome.</p>
+          <p>Here’s how to use it in Chrome.</p>
           <ol>
             <li>Open Chrome.</li>
             <li>Open the page you want to inspect.</li>
@@ -483,7 +383,7 @@ function App() {
               </picture>
             </LazyLoad>
             <figcaption className='caption'>
-              In Firefox, this is what a graphic lookss like without the browser
+              In Firefox, this is what a graphic looks like without the browser
               simulating a visual impairment related to color.
             </figcaption>
           </figure>
@@ -506,7 +406,7 @@ function App() {
                   sizes='(max-width: 1200px) 100vw, 1200px'
                   loading='lazy'
                   decoding='async'
-                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of “blue blindness.” Firefox’s developer tools menu is shown with the accessibility tab selected and “tritanopia“ is selected in the Simulate option.'
+                  alt='A graphic about the Lassen Peak snowpack is shown with a simulation of “blue blindness.” Firefox’s developer tools menu is shown with the accessibility tab selected and “tritanopia” is selected in the Simulate option.'
                 />
               </picture>
             </LazyLoad>
@@ -547,7 +447,7 @@ function App() {
               ledger lines are also still visible across all data points.
             </figcaption>
           </figure>
-          <p>Here's how to access Firefox's accessibility tools.</p>
+          <p>Here’s how to access Firefox’s accessibility tools.</p>
           <ol>
             <li>Open Firefox and load your page.</li>
             <li>
@@ -757,14 +657,14 @@ function App() {
           </p>
           <aside>
             <p>
-              <b>Exercise:</b> Using the data from the last exercise (in the{' '}
+              <b>Exercise:</b> Using the data from the last exercise in the{' '}
               <a
                 href='https://drive.google.com/drive/folders/1CEWKw158LFQm_Zg-2y05MARXJLca5u-Q?usp=drive_link'
                 target='_blank'
                 rel='noreferrer noopener'>
                 Google Drive folder
               </a>
-              ) create your own chart by visualizing the data with RawGraphs and
+              {' '}create your own chart by visualizing the data with RawGraphs and
               then styling in Illustrator. Alternatively, use Illustrator’s
               chart tool to make the visualization.
             </p>
@@ -868,8 +768,8 @@ function App() {
           </aside>
           <p>
             This is a simplified version of what my code looks like for the two
-            photos. They are two stacked image tags, which I've wrapped in the
-            same <b>figure</b> tag since they're part of the same “graphic” and
+            photos. They are two stacked image tags, which I’ve wrapped in the
+            same <b>figure</b> tag since they’re part of the same “graphic” and
             should have the same caption (in the <b>figcaption</b> tag):
           </p>
           <pre>
@@ -893,7 +793,7 @@ function App() {
           </pre>
           <p>
             By targeting something unique about the images, we can give them{' '}
-            <b>CSS rules</b>. In this case, we can use each image's <b>class</b>
+            <b>CSS rules</b>. In this case, we can use each image’s <b>class</b>
             . In the styles.css file, we can add a rule that hides one of the
             images based on the viewport width.
           </p>
@@ -938,10 +838,18 @@ function App() {
               . Edit the file <b>styles.css</b> so that the smaller version is
               visible for mobile sizes, and the larger version is visible on
               larger viewports. The answer is in the <b>solution</b> folder.
-              Here's a hint: Target the classes <b>mobile</b> and{' '}
+              Here’s a hint: Target the classes <b>mobile</b> and{' '}
               <b>text-width</b>.
             </p>
           </aside>
+          <p>
+            The reality is not every news organization will have an up-to-date
+            or flexible content management system. Some organizations,
+            regardless of their size, may be hampered by websites or newsroom
+            products that do not allow for complex, bespoke graphics. Using
+            rasterized images but adding alt text and CSS is a low-lift and
+            low-tech solution that can potentially help.
+          </p>
           <h4>
             <span>2. AI2HTML</span>
           </h4>
@@ -963,7 +871,7 @@ function App() {
             from Google Earth.
           </p>
           <p>
-            What's striking about AI2HTML is how relevant it is still. It often
+            What’s striking about AI2HTML is how relevant it is still. It often
             underpins very sophisticated visualizations, including a recent
             <a
               href='https://www.nytimes.com/interactive/2025/11/15/us/camp-mystic-flooding-deaths-video-map.html'
